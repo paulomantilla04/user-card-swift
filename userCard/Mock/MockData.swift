@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MockData {
     static let messi = PlayerCardData(
-        image: Image("messi"),
+        image: Image("messi2"),
         name: "Lionel Messi",
         description: "Football Player who focuses on simplicity & technique.",
         stats: PlayerStats(

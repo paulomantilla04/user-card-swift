@@ -11,6 +11,8 @@ struct UserCardComponentB: View {
     
     
     let player: PlayerCardData
+    
+    @State private var dragOffset: CGSize = .zero
 
     
     var body: some View {
@@ -89,11 +91,32 @@ struct UserCardComponentB: View {
                 }
                 .padding(.top, 6)
             }
+            .rotation3DEffect(
+                .degrees(Double(dragOffset.width / -15)),
+                axis: (x: 0, y: 1, z: 0)
+            )
+            .rotation3DEffect(
+                .degrees(Double(dragOffset.height / 15)),
+                axis: (x: 1, y: 0, z: 0)
+            )
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        withAnimation(.interactiveSpring(response: 0.2, dampingFraction: 0.8, blendDuration: 0.5)) {
+                            dragOffset = value.translation
+                        }
+                    }
+                    .onEnded { _ in
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.5)) {
+                        dragOffset = .zero
+                        }
+                    }
+            )
         }
     }
 
 #Preview {
-    UserCardComponentB(player: MockData.messi)
+    UserCardComponentB(player: MockData.mbappe)
 }
 
 
