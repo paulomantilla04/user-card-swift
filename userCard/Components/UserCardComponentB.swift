@@ -33,8 +33,6 @@ struct UserCardComponentB: View {
                                     .mask(
                                         LinearGradient(
                                             gradient: Gradient(stops: [
-                                                .init(color: .clear, location: 0.0),
-                                                .init(color: .clear, location: 0.5),
                                                 .init(color: .clear, location: 0.5),
                                                 .init(color: .black, location: 0.7)
                                             ]),
@@ -46,10 +44,8 @@ struct UserCardComponentB: View {
                             
                                 LinearGradient(
                                     gradient: Gradient(stops: [
-                                            .init(color: .clear, location: 0.0),
                                             .init(color: .clear, location: 0.5),
-                                            .init(color: .clear, location: 0.5),
-                                            .init(color: Color.black.opacity(0.5), location: 0.7)
+                                            .init(color: .black.opacity(0.5), location: 0.7)
                                         ]),
                                             startPoint: .top,
                                             endPoint: .bottom
