@@ -25,8 +25,6 @@ struct UserCardComponentB: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 335, height: 535)
-                        .clipped()
-                        .clipShape(RoundedRectangle(cornerRadius: 45, style: .continuous))
                         .overlay(
                             ZStack {
                                 
@@ -58,8 +56,7 @@ struct UserCardComponentB: View {
                                 )
                             }
                         )
-                        .frame(width: 335, height: 535)
-                        .clipShape(RoundedRectangle(cornerRadius: 45, style: .continuous))
+                        .clipShape(RoundedRectangle(cornerRadius: 45))
                     
                     VStack (alignment: .leading, spacing: 10){
                         HStack(spacing: 10){
@@ -98,5 +95,9 @@ struct UserCardComponentB: View {
             }
         }
     }
+
+#Preview {
+    UserCardComponentB(player: MockData.messi)
+}
 
 

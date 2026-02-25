@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        UserCardComponentA(player: MockData.mbappe)
+        UserCardComponentB(player: MockData.messi)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(hex: "F5F5F5").ignoresSafeArea())
     }
